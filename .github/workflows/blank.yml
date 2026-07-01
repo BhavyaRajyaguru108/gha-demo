@@ -3,10 +3,20 @@
 name: Hello World
 on: workflow_dispatch
 jobs:
-  hello:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Hello Step
-        run: |
-          echo "Welcome to Github Actions"
-          echo "Hello we can add multiple shell commands in a single run step"
+      - name: Create build
+        run: echo "Created build Job"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test cases
+        run: echo "Check full test case coverage"
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: echo "Ready to Deploy"
