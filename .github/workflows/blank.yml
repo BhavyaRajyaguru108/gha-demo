@@ -11,12 +11,14 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Test cases
         run: echo "Check full test case coverage"
 
   deploy:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: Deploy
         run: echo "Ready to Deploy"
